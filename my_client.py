@@ -22,6 +22,18 @@ async def fetch_objects():
         result = await client.call_tool("get_objects", {})
         print(result.structured_content['result'][0])
 
+
+async def test_send_sms():
+    async with client:
+        result = await client.call_tool("send_sms", {
+            "ToPhoneNumber": "+19495942405",
+            "Body": "Hello from  test 12.23 PM "
+        })
+        print(result.structured_content["result"])
+
+
 asyncio.run(call_tool("Saranga"))
 # asyncio.run(sum(5, 10))
-asyncio.run(fetch_objects())
+# asyncio.run(fetch_objects())
+
+asyncio.run(test_send_sms())
