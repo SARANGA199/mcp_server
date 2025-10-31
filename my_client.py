@@ -27,7 +27,7 @@ async def test_send_sms():
     async with client:
         result = await client.call_tool("send_sms", {
             "ToPhoneNumber": "+19495942405",
-            "Body": "Hello from  test 12.23 PM "
+            "Body": "Hello from  test 10.39 AM "
         })
         print(result.structured_content["result"])
 
